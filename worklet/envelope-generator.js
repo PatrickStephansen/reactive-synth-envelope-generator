@@ -131,7 +131,8 @@ registerProcessor(
 				},
 			});
 			this.internalProcessorPtr = this.wasmModule.exports.init(
-				renderQuantumSampleCount
+				renderQuantumSampleCount,
+				this.sampleRate
 			);
 			this.float32WasmMemory = new Float32Array(
 				this.wasmModule.exports.memory.buffer
