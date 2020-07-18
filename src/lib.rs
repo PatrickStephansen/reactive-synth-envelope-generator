@@ -110,7 +110,6 @@ fn get_envelope_value(
 		if !input_gate_open {
 			if sample_time < release_time {
 				envelope_stage = EnvelopeStage::Release;
-				stage_progress = sample_time / release_time;
 				if seconds_on_stage < attack_time {
 					value_on_trigger_change = linear_interp(
 						value_on_trigger_change,
@@ -133,6 +132,7 @@ fn get_envelope_value(
 					value_on_trigger_change = sustain_value;
 				}
 				seconds_on_stage = sample_time;
+				stage_progress = sample_time / release_time;
 				output_value = linear_interp(
 					value_on_trigger_change,
 					0.0,
