@@ -1,7 +1,7 @@
 # reactive-synth-envelope-generator
 WASM implementation of an envelope generator audio processing node compatible with the web audio API. Created for [reactive-synth](https://github.com/PatrickStephansen/reactive-synth), but usable elsewhere if I ever document how.
 
-The input is treated as a gate that opens when it rises above 0. The envelope has 5 active stages: attack, hold, decay, sustain and release. It moves through the first 3, which have fixed times, and settles on the 4th as the gate opens and is held open. It skips to the release stage when the gate closes. All curves are currently linear, but there are plans to parameterize each curve. Output is between 0 and 1.
+The the 'trigger' parameter is treated as a gate that opens when it rises above 0. The envelope has 5 active stages: attack, hold, decay, sustain and release. It moves through the first 3, which have fixed times, and settles on the 4th as the gate opens and is held open. It skips to the release stage when the gate closes. All curves are currently linear, but there are plans to parameterize each curve. Output is between 0 and 1.
 
 ## build
 

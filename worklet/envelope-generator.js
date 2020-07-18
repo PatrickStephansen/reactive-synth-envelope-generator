@@ -138,10 +138,10 @@ registerProcessor(
 			);
 		}
 
-		process(inputs, outputs, parameters) {
+		process(_inputs, outputs, parameters) {
 			if (this.wasmModule) {
 				this.float32WasmMemory.set(
-					this.manualTriggerOn ? this.manualTriggerOnParameter : inputs[0],
+					this.manualTriggerOn ? this.manualTriggerOnParameter : parameters.trigger,
 					this.wasmModule.exports.get_input_gate_ptr(
 						this.internalProcessorPtr
 					) / bytesPerMemorySlot
@@ -186,7 +186,7 @@ registerProcessor(
 						this.internalProcessorPtr,
 						this.manualClockTriggerOn
 							? this.manualTriggerOnParameter.length
-							: inputs[0].length,
+							: parameters.trigger.length,
 						parameters.attackValue.length,
 						parameters.attackTime.length,
 						parameters.holdTime.length,
