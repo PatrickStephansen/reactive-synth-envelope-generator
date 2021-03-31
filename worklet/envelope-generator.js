@@ -185,7 +185,7 @@ registerProcessor(
 				const outputPointer =
 					this.wasmModule.exports.process_quantum(
 						this.internalProcessorPtr,
-						this.manualClockTriggerOn
+						this.manualTriggerOn
 							? this.manualTriggerOnParameter.length
 							: parameters.trigger.length,
 						parameters.attackValue.length,
