@@ -81,7 +81,7 @@ registerProcessor(
 		}
 
 		handleMessage(event) {
-			if (event.data && event.data.type === "getState") {
+			if (event.data && event.data.type === "get-state") {
 				if (this.wasmModule){
 					this.wasmModule.exports.publish_state(this.internalProcessorPtr);
 

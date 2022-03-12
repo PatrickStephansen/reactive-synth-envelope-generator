@@ -284,7 +284,7 @@ fn get_envelope_value(
 				);
 			} else {
 				envelope_stage = EnvelopeStage::Sustain;
-				seconds_on_stage = sample_time - decay_time;
+				seconds_on_stage = seconds_on_stage + sample_time - decay_time;
 				output_value = sustain_value;
 				stage_progress = seconds_on_stage - seconds_on_stage.floor();
 			}
