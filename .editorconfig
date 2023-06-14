@@ -9,3 +9,9 @@ charset = utf-8
 indent_style = tab
 insert_final_newline = true
 trim_trailing_whitespace = true
+
+[*.md]
+indent_style = space
+tab_width = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
